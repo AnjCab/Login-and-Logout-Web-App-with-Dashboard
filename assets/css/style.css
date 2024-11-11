@@ -12,6 +12,8 @@ body {
     background: url('https://wallpaper.dog/large/20498591.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Roboto', sans-serif;
+    color: #fff;
+    overflow: hidden;
 }
 
 .container {
@@ -19,15 +21,11 @@ body {
 }
 
 .flip-card {
-    width: 300px;
+    width: 320px;
     height: 400px;
-}
-
-.flip-card-front h2,
-.flip-card-back h2 {
-    font-size: 1.8em; 
-    margin-bottom: 20px;
-    color: white    ; 
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .flip-card-inner {
@@ -43,11 +41,15 @@ body {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    background-color: rgba(255, 255, 255, 0.2); 
-    backdrop-filter: blur(10px); 
+    background-color: rgba(255, 255, 255, 0.2); /* Slight opacity */
+    backdrop-filter: blur(15px); /* Blur effect for the background */
     padding: 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: #fff;
 }
 
@@ -70,47 +72,52 @@ body {
     transform: rotateY(180deg);
 }
 
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
 .input-icon {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .input-icon input {
     width: 100%;
-    padding: 10px 10px 10px 35px; 
-    border-radius: 5px;
+    padding: 12px 15px 12px 40px; 
+    border-radius: 8px;
     border: 1px solid #ddd;
     font-size: 16px;
     outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+}
+
+.input-icon input:focus {
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .input-icon i {
     position: absolute;
-    left: 10px;
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
     color: #888;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.3s ease;
 }
-
-
-.input-icon input:focus::placeholder,
-.input-icon input:not(:placeholder-shown)::placeholder,
-.input-icon input:focus + i,
-.input-icon input:not(:placeholder-shown) + i {
-    opacity: 0;
-}
-
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #4CAF50;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 button:hover {
@@ -118,16 +125,23 @@ button:hover {
 }
 
 p {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 a {
     color: #007BFF;
     text-decoration: none;
     cursor: pointer;
+    font-size: 14px;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
+/* Animations */
+@keyframes flipIn {
+    0% {
+        transform: rotateY(90deg);
+    }
+   

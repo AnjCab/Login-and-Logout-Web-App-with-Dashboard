@@ -35,7 +35,7 @@
                 <h2>Register</h2>
                 <form action="assets/database/register.php" method="post">
                     <div class="input-icon">
-                        <input type="text" name="fullname" placeholder="Full Name">
+                        <input type="text" name="fullname" placeholder="Full Name" required>
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="input-icon">
@@ -43,7 +43,7 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="input-icon">
-                        <input type="email" name="email" placeholder="Email">
+                        <input type="email" name="email" placeholder="Email" required>
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="input-icon">
@@ -57,6 +57,7 @@
         </div>
     </div>
 </div>
+
 <script src="assets/js/script.js"></script>
 </body>
 </html>
